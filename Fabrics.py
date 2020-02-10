@@ -69,6 +69,14 @@ biax = Fabric(
     weight = 5.9,
     orientation = [45., -45.])
 
+uni = Fabric(
+    name = "uni",
+    description = "Unidirectional T700 Carbon Fiber",
+    material = carbon_T700,
+    thickness = 0.021,
+    weight = 8.8,
+    orientation = [0.])
+
 soricXf = Fabric(
     name = "soricXf",
     description = "Lightweight Filler Mat",

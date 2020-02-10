@@ -41,4 +41,8 @@ class Layer:
     @property
     def thickness(self):
         """The thickness of this Layer"""
-        return self.fabric.thickness
+        if self.fabric.material.density == 0.:
+            return self.fabric.thickness
+        thicknessDueToFabric = .001335 * self.fabric.weight / self.fabric.material.density
+        thicknessDueToMatrix = .001335 * ((1. - self.ratio) / self.ratio) * self.fabric.weight / self.matrix.density
+        return thicknessDueToFabric + thicknessDueToMatrix

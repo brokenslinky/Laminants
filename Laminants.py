@@ -56,13 +56,15 @@ if __name__ == "__main__":
     isoCarbon = Laminant([Layer(fabric=twill), Layer(fabric=biax)])
     offAxisCarbon = Laminant([Layer(fabric=biax), Layer(fabric=biax)])
     orthoCarbon = Laminant([Layer(fabric=twill), Layer(fabric=twill)])
+    uniCarbon = Laminant([Layer(fabric=uni)])
     laminantDict = {"steel": pureSteel, "aluminum": pureAluminum, "carbon": isoCarbon, 
-                    "offAxis": offAxisCarbon, "orthoCarbon": orthoCarbon}
+                    "offAxis": offAxisCarbon, "orthoCarbon": orthoCarbon, "uni": uniCarbon}
     descriptions = {
         "steel": steel.description, "aluminum": aluminum.description, 
         "carbon": "Isotropic Carbon Composite", 
         "offAxis": "Orthogonal Carbon Laminant loaded 45 degrees off axis",
-        "orthoCarbon": "Orthogonal Carbon Laminant loaded on axis"}
+        "orthoCarbon": "Orthogonal Carbon Laminant loaded on axis",
+        "uni": "Unidirectional Carbon Laminant"}
 
     def chooseMaterial():
         response = input("Choose a Laminant. (ls for a list of available Laminants)\n")
