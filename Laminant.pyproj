@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2c52e9a8-01c0-453d-aa8a-5fdfce409ed7</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Laminant.py</StartupFile>
+    <StartupFile>Laminants.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -24,7 +24,7 @@
     <Compile Include="Fabrics.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Laminant.py" />
+    <Compile Include="Laminants.py" />
     <Compile Include="Layers.py">
       <SubType>Code</SubType>
     </Compile>
