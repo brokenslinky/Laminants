@@ -1,4 +1,3 @@
-
 import Materials
 from Materials import *
 
@@ -54,8 +53,8 @@ class Fabric:
         self._description = description
 
 twill = Fabric(
-    name = "twill",
-    description = "2x2 Twill Weave Carbon Fiber",
+    name = "Twill Carbon",
+    description = "Carbon 2x2 Twill Weave",
     material = carbon,
     thickness = 0.009,
     weight = 5.9, 
@@ -63,7 +62,7 @@ twill = Fabric(
 
 biax = Fabric(
     name = "biax",
-    description = "45° Twil Weave Carbon Fiber",
+    description = "45° Twill Weave Carbon Fiber",
     material = carbon,
     thickness = 0.009,
     weight = 5.9,
@@ -80,5 +79,50 @@ uni = Fabric(
 soricXf = Fabric(
     name = "soricXf",
     description = "Lightweight Filler Mat",
-    thickness = 0.07874,
+    thickness = 0.009,
     weight = 29.5)
+
+kevlar = Fabric(
+    name = "Kevlar 4HS",
+    description = "Kevlar 49 4-Harness Satin Weave",
+    material = kevlar49,
+    thickness = 0.1,
+    weight = 5.,
+    orientation = [0., 90.])
+
+kevlarBiax = Fabric(
+    name = "Kevlar 4HS",
+    description = "±45° Kevlar 49 4-Harness Satin Weave",
+    material = kevlar49,
+    thickness = 0.1,
+    weight = 5.,
+    orientation = [45., -45.])
+
+triax = Fabric(
+    name = "triax",
+    description = "0°,±60° Quasi-Isotropic Carbon Fiber",
+    material = carbon,
+    thickness = 0.014,
+    weight = 8,
+    orientation = [0., 60., -60.])
+
+fabric_library = {
+    "1": twill, "2": biax, "3": uni, "4": soricXf, "5": kevlar, "6": kevlarBiax, "7": triax
+    }
+
+def select_fabric():
+    response = input("Choose a fabric. (ls for list)\n")
+    def list_fabrics():
+        for tag in fabric_library:
+            print(f"{tag} : {fabric_library[tag].name} - {fabric_library[tag].description}")
+        print("0 : Done")
+    if response == "ls":
+        list_fabrics()
+        return select_fabric()
+    if response == "0":
+        return 0
+    if response in fabric_library:
+         return fabric_library[response]
+    print("Invalid selection. Please choose from the list:")
+    list_fabrics()
+    return select_fabric()
