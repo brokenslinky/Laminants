@@ -70,12 +70,20 @@ carbon_AS4 = Material(
     strength = 4413.,
     modulus = 231.)
 
+kevlar49 = Material(
+    name = "Kevlar",
+    description = "Kevlar 49",
+    density = 1.44,
+    strength = 3620.,
+    modulus = 112.)
+
 epoxy = Material(
     name = "Epoxy",
     description= "Typical Composite Epoxy",
     density = 1.25,
-    strength = 69.,
-    modulus = 3.5)
+    strength = 70.,
+    modulus = 1.7 # Non-linear. Reduced from initial to allow elongation in model
+    )
 
 space = Material(
     name = "Nothing",
